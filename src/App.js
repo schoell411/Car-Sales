@@ -5,8 +5,6 @@ import Header from './components/Header';
 import AddedFeatures from './components/AddedFeatures';
 import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
-
-//actions
 import { addFeature, removeFeature } from './actions/action';
 
 const App = props => {
@@ -26,11 +24,14 @@ const App = props => {
         <AddedFeatures car={props.car} removeFeature={removeFeature} />
       </div>
       <div className="box">
-        <AdditionalFeatures buyItem={props.additionalFeatures}   />
+        <AdditionalFeatures additionalFeatures={props.additionalFeatures}
+        addFeature={buyItem}   />
         <Total car={props.car} additionalPrice={props.additionalPrice} />
       </div>
     </div>
   );
 };
 
-export default connect(state => state)(App);
+const mapDispatchToProps = { addFeature, removeFeature };
+
+export default connect(state => state, mapDispatchToProps)(App);
