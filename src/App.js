@@ -19,14 +19,15 @@ const App = props => {
 
   return (
     <div className="boxes">
-      <div className="box">
-        <Header car={props.car} />
-        <AddedFeatures car={props.car} removeFeature={removeFeature} />
+      <div className="card">
+        <Header car={props.car} className="card-title" />
+        <AddedFeatures car={props.car} removeFeature={removeFeature} className="card-body" />
       </div>
-      <div className="box">
+      <div className="card">
+      <Total car={props.car} additionalPrice={props.additionalPrice} className="card-title" />
         <AdditionalFeatures additionalFeatures={props.additionalFeatures}
-        addFeature={buyItem}   />
-        <Total car={props.car} additionalPrice={props.additionalPrice} />
+        addFeature={buyItem} className="card-body"  />
+        
       </div>
     </div>
   );
