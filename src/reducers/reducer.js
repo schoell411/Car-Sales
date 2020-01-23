@@ -52,7 +52,7 @@ const reducer = (state, action) => {
           ]
         },
         additionalFeatures : [
-          ...state.additionalPrice, action.payload
+          ...state.additionalFeatures, action.payload
         ]
       }
     default: return state
