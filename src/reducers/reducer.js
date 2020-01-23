@@ -19,7 +19,7 @@ const initialState = {
 
 const reducer = (state, action) => {
   switch(action.type){
-    case ADD_FEATURE :
+    case 'ADD_FEATURE' :
       return {
         ...state,
         additionalPrice :  
@@ -37,7 +37,7 @@ const reducer = (state, action) => {
           )
         ]
       };
-    case REMOVE_FEATURE :
+    case 'REMOVE_FEATURE' :
       return {
         ...state,
         additionalPrice : 
